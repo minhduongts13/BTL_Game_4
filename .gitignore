@@ -1,0 +1,16 @@
+# Ignore các thư mục cache và tạm thời
+BTL_Game4/Library/
+BTL_Game4/Logs/
+BTL_Game4/Temp/
+BTL_Game4/Obj/
+BTL_Game4/Builds/
+BTL_Game4/UserSettings/
+BTL_Game4/.vs/
+
+# Ignore các file build và cấu hình cá nhân
+*.csproj
+*.sln
+*.vsconfig
+*.userprefs
+*.log
+*.unitypackage
