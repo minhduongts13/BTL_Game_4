@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef171bc59bb043479690580bbf496af, type: 3}
+  m_Name: blue_5
+  m_EditorClassIdentifier: 
+  cardColor: blue
+  cardNumber: 5
+  cardSprite: {fileID: 4292893322910724812, guid: 376501d327d1640478f02f5be1ad0a2c, type: 3}

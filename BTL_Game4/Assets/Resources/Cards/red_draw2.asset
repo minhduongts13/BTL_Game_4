@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ef171bc59bb043479690580bbf496af, type: 3}
+  m_Name: red_draw2
+  m_EditorClassIdentifier: 
+  cardColor: red
+  cardNumber: -12
+  cardSprite: {fileID: -7781947585590596288, guid: 3f23897de91b67e4b8a9fa214bc45a46, type: 3}
