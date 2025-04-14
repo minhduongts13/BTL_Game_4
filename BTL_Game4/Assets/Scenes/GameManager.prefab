@@ -44,9 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8952d5e69adca2143a8b4b362fcedbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opponentsData:
-  - {fileID: 11400000, guid: f576ecc02a23252468f40bf9fbaab0ec, type: 2}
+  opponentsData: []
   playerHandManager: {fileID: 0}
-  opponentHandPrefab: {fileID: 0}
-  opponentsParent: {fileID: 0}
-  opponentManagers: []

@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 9cb5fe68dd2e04647b51ebc231ff3db1
+  productGUID: f77f78997b11ee84c865ff4e6cb560c0
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: BTL_Game4
+  productName: BTL_4
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -595,14 +595,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: BTL_Game4
+  metroPackageName: BTL_4
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: BTL_Game4
+  metroApplicationDescription: BTL_4
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -673,11 +673,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: c0be1aa1-cd42-474c-a69b-bc075aa7baad
+  cloudProjectId: 1120a17d-15de-4b42-9609-ef5fce45b182
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: BTL_Game4
-  organizationId: minhduongts13
+  projectName: BTL_4
+  organizationId: giomuatunhien
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

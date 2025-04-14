@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6117431624283ae469aecdfe388c119b, type: 3}
   m_Name: opponent1
   m_EditorClassIdentifier: 
-  opponentName: 
-  avatar: {fileID: 0}
+  opponentName: cuong
+  avatar: {fileID: 4569857921169626184, guid: 01a457bb1ca5e1b4b9e016346eece706, type: 3}
   initialCardCount: 7
