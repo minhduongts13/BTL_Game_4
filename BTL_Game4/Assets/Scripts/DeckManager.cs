@@ -16,10 +16,24 @@ public class DeckManager : MonoBehaviour
     // Load tất cả CardData từ folder Resources/Cards
     void LoadDeckFromResources()
     {
-        // Sử dụng Resources.LoadAll để load các asset CardData từ folder "Cards"
+
         CardData[] cards = Resources.LoadAll<CardData>("Cards");
-        deck = new List<CardData>(cards);
-        Debug.Log("Loaded " + deck.Count + " cards from Resources/Cards");
+        deck = new List<CardData>();
+
+        foreach (CardData card in cards)
+        {
+            if (card.cardNumber != (-99)) // <- Tên phải đúng với asset
+            {
+                deck.Add(card);
+            }
+            else
+            {
+                Debug.Log("Skipped BackCard.asset from deck.");
+            }
+        }
+
+        Debug.Log("Loaded " + deck.Count + " cards (excluding BackCard)");
+
     }
 
     // Xáo bài đơn giản
@@ -46,4 +60,9 @@ public class DeckManager : MonoBehaviour
         deck.RemoveAt(0);
         return card;
     }
+    public int RemainingCardCount()
+    {
+        return deck.Count; // hoặc danh sách bạn đang dùng để chứa bài
+    }
+
 }

@@ -1,10 +1,18 @@
 using UnityEngine;
 
+public enum OpponentPosition
+{
+    Top,
+    Right,
+    Bottom,
+    Left
+}
+
+[System.Serializable]
 [CreateAssetMenu(fileName = "NewOpponent", menuName = "UNO/OpponentData")]
-public class OpponentData : ScriptableObject
+public class OpponentData : ScriptableObject  // Kế thừa từ ScriptableObject
 {
     public string opponentName;
     public Sprite avatar;
-    public int initialCardCount = 7;
-    // sau này có thể thêm AI type, chiến thuật,...
+    public OpponentPosition fixedPosition;  // Enum chứa các lựa chọn
 }

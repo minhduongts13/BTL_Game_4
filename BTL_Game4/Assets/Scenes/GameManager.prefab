@@ -44,5 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8952d5e69adca2143a8b4b362fcedbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  opponentsData: []
+  colorWheel: {fileID: 0}
+  gameBoardPanel: {fileID: 0}
+  opponentsData:
+  - {fileID: 11400000, guid: f576ecc02a23252468f40bf9fbaab0ec, type: 2}
+  - {fileID: 11400000, guid: 50633004b48211f4aa0625ef1ae15bdf, type: 2}
+  - {fileID: 11400000, guid: 8184dd51b67c2cb43abb7ea91e33af29, type: 2}
   playerHandManager: {fileID: 0}
+  opponentHandPrefab: {fileID: 0}
+  opponentsParent: {fileID: 0}
+  opponentManagers: []
+  deckCountText: {fileID: 0}

@@ -2,19 +2,18 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class OpponentHandManager : MonoBehaviour  // ← thêm MonoBehaviour
+public class PlayerHandManager : MonoBehaviour  // ← thêm MonoBehaviour
 {
     public List<CardData> playerCards;    // Gán trong Inspector
-    public GameObject cardBackPrefab;         // Prefab của lá bài
-    public Transform opponentHandPanel;           // Vị trí/parent chứa các lá bài
+    public GameObject cardPrefab;         // Prefab của lá bài
+    public Transform handPanel;           // Vị trí/parent chứa các lá bài
     public DynamicHandLayout dynamicHandLayout; // Gán script DynamicHandLayout qua Inspector
-    public int cardCount = 0; // Số lượng lá bài hiện có
-    public OpponentUI opponentUI;  // Tham chiếu đến component OpponentUI trong prefab
+
     void Start()
     {
         // for (int i = 0; i < playerCards.Count; i++)
         // {
-        //     GameObject cardGO = Instantiate(cardBackPrefab, opponentHandPanel);
+        //     GameObject cardGO = Instantiate(cardPrefab, handPanel);
         //     CardDisplay cardDisplay = cardGO.GetComponent<CardDisplay>();
         //     cardDisplay.SetCard(playerCards[i]);
         //     StartCoroutine(CallAdjustSpacing());
@@ -22,16 +21,10 @@ public class OpponentHandManager : MonoBehaviour  // ← thêm MonoBehaviour
     }
     public void SpawnCard(CardData cardData)
     {
-        GameObject cardGO = Instantiate(cardBackPrefab, opponentHandPanel);
+        GameObject cardGO = Instantiate(cardPrefab, handPanel);
         CardDisplay cardDisplay = cardGO.GetComponent<CardDisplay>();
-        cardData = cardDisplay.cardData;
         cardDisplay.SetCard(cardData);
 
-        cardCount++;
-        if (opponentUI != null)
-        {
-            opponentUI.SetCardCount(cardCount);
-        }
         // Có thể gọi DynamicHandLayout để điều chỉnh layout nếu cần
         StartCoroutine(CallAdjustSpacing());
     }
@@ -39,7 +32,7 @@ public class OpponentHandManager : MonoBehaviour  // ← thêm MonoBehaviour
     IEnumerator CallAdjustSpacing()
     {
         yield return null; // Đợi 1 frame
-        dynamicHandLayout.AdjustSpacing(opponentHandPanel.childCount);
+        dynamicHandLayout.AdjustSpacing(handPanel.childCount);
     }
     public void RemoveCardObject(GameObject cardObject)
     {
@@ -52,12 +45,6 @@ public class OpponentHandManager : MonoBehaviour  // ← thêm MonoBehaviour
 
             Destroy(cardObject);
         }
-        if (cardCount > 0) cardCount--;
-        if (opponentUI != null)
-        {
-            opponentUI.SetCardCount(cardCount);
-        }
-
     }
 
 
