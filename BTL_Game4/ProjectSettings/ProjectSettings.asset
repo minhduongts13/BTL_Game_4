@@ -691,11 +691,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: c0be1aa1-cd42-474c-a69b-bc075aa7baad
+  cloudProjectId: 56abad70-4b47-436b-be0d-70e661b9e8e5
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: BTL_Game4
-  organizationId: minhduongts13
+  projectName: My project 2025-04-16_13-14-35
+  organizationId: hoquanglong04
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

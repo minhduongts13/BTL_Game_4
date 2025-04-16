@@ -6,6 +6,8 @@ public class DeckManager : MonoBehaviour
     public static DeckManager Instance { get; private set; }
     private List<CardData> deck;
 
+    
+
     void Awake()
     {
         Instance = this;
@@ -19,6 +21,18 @@ public class DeckManager : MonoBehaviour
         // Sử dụng Resources.LoadAll để load các asset CardData từ folder "Cards"
         CardData[] cards = Resources.LoadAll<CardData>("Cards");
         deck = new List<CardData>(cards);
+        foreach(CardData card in cards){
+            if(card.cardNumber >= 1 && card.cardNumber <= 9){
+                deck.Add(card);
+            } 
+            else if(card.cardNumber >= -12 && card.cardNumber <= -10){
+                deck.Add(card);
+            } else { // -13 và -14
+                deck.Add(card);
+                deck.Add(card);
+                deck.Add(card);
+            }
+        }
         Debug.Log("Loaded " + deck.Count + " cards from Resources/Cards");
     }
 

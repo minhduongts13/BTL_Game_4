@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.Diagnostics;
+using System.Threading;
 
 public class GameState
 {
@@ -47,6 +49,6 @@ public class GameState
     {
         // Logic xóa card của player có ActorNumber tương ứng
         // Nếu bạn đồng bộ tay bài qua PlayerHandManager, có thể bạn không cần thiết lập tại đây
-        Debug.Log($"Xóa {card} khỏi tay của Player {actorNumber}");
+        UnityEngine.Debug.Log($"Xóa {card} khỏi tay của Player {actorNumber}");
     }
 }

@@ -8,7 +8,7 @@ public class CardDataGenerator
     public static void GenerateCardAssets()
     {
         string spriteFolderPath = "Assets/Cards_Image";
-        string assetOutputPath = "Assets/Data/Cards";
+        string assetOutputPath  = "Assets/Data/Cards";
 
         if (!Directory.Exists(assetOutputPath))
             Directory.CreateDirectory(assetOutputPath);
