@@ -2,10 +2,11 @@ using UnityEngine;
 
 public enum OpponentPosition
 {
+    Left,
+
     Top,
-    Right,
-    Bottom,
-    Left
+
+    Right
 }
 
 [System.Serializable]

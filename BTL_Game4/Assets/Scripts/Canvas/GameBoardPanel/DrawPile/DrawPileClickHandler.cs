@@ -32,8 +32,9 @@ public class DrawPileClickHandler : MonoBehaviour, IPointerClickHandler
     {
         if (cardDrawer != null)
         {
-
+            if (GameSetupManager.Instance.turn != "Player") return;
             cardDrawer.DrawCard();
+
             //Debug.Log("Đã click vào DrawPile, rút bài!");
 
             //Chỉ để test opponent
@@ -44,6 +45,7 @@ public class DrawPileClickHandler : MonoBehaviour, IPointerClickHandler
             //     return;
             // }
             // opponentHandManager.SpawnCard(drawnCard);
+
         }
         else
         {

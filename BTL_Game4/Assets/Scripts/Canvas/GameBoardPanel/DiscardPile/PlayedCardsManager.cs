@@ -8,7 +8,7 @@ public class PlayedCardsManager : MonoBehaviour
     public GameObject cardPrefab;      // Prefab của lá bài
     public int maxPlayedCards = 5;
 
-    private List<CardData> playedCards = new List<CardData>();
+    public List<CardData> playedCards = new List<CardData>();
 
     public void AddPlayedCard(CardData cardData)
     {
@@ -24,12 +24,12 @@ public class PlayedCardsManager : MonoBehaviour
         // Thêm vào list
         playedCards.Add(cardData);
 
-        // Xóa lá bài cũ nếu quá max
-        if (playedCards.Count > maxPlayedCards)
-        {
-            playedCards.RemoveAt(0);
-            Destroy(playedCardsPanel.GetChild(0).gameObject);
-        }
+        // // Xóa lá bài cũ nếu quá max
+        // if (playedCards.Count > maxPlayedCards)
+        // {
+        //     playedCards.RemoveAt(0);
+        //     Destroy(playedCardsPanel.GetChild(0).gameObject);
+        // }
 
         // Đảm bảo lá mới nằm trên cùng
         newCard.transform.SetAsLastSibling();

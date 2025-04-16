@@ -10,9 +10,18 @@ public class CardDisplay : MonoBehaviour
     // Hàm để cập nhật giao diện khi có dữ liệu
     public void SetCard(CardData data)
     {
-        cardData = data;
-        cardImage.sprite = data.cardSprite;  // Gán hình ảnh từ CardData
-        cardText.text = data.cardColor + " " + data.cardNumber.ToString();
+        if (cardData && cardData.cardNumber == -99)
+        {
+            cardImage.sprite = cardData.cardSprite;
+            cardData = data;
+            cardText.text = data.cardColor + " " + data.cardNumber.ToString();
+        }
+        else
+        {
+            cardData = data;
+            cardImage.sprite = data.cardSprite;  // Gán hình ảnh từ CardData
+            cardText.text = data.cardColor + " " + data.cardNumber.ToString();
+        }
         Debug.Log("Card Display Set: " + cardText.text);
     }
 }

@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerHandManager : MonoBehaviour  // ← thêm MonoBehaviour
+public class PlayerHandManager : HandManagerBase  // ← thêm MonoBehaviour
 {
-    public List<CardData> playerCards;    // Gán trong Inspector
+
     public GameObject cardPrefab;         // Prefab của lá bài
     public Transform handPanel;           // Vị trí/parent chứa các lá bài
     public DynamicHandLayout dynamicHandLayout; // Gán script DynamicHandLayout qua Inspector
@@ -19,11 +19,12 @@ public class PlayerHandManager : MonoBehaviour  // ← thêm MonoBehaviour
         //     StartCoroutine(CallAdjustSpacing());
         // }
     }
-    public void SpawnCard(CardData cardData)
+    public override void SpawnCard(CardData cardData)
     {
         GameObject cardGO = Instantiate(cardPrefab, handPanel);
         CardDisplay cardDisplay = cardGO.GetComponent<CardDisplay>();
         cardDisplay.SetCard(cardData);
+        playerCards.Add(cardData);
 
         // Có thể gọi DynamicHandLayout để điều chỉnh layout nếu cần
         StartCoroutine(CallAdjustSpacing());

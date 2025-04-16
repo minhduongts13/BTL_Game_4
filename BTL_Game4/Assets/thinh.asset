@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   opponentName: thinh
   avatar: {fileID: 4569857921169626184, guid: 01a457bb1ca5e1b4b9e016346eece706, type: 3}
-  fixedPosition: 3
+  fixedPosition: 2

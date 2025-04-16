@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class ColorWheelController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+
+    public PlayedCardsManager playedCardsManager;
     [Header("Wheel Settings")]
     public int diameter = 256;
     public Image targetImage;
@@ -29,7 +31,7 @@ public class ColorWheelController : MonoBehaviour, IPointerEnterHandler, IPointe
     private Color[] originalColors;
     private int[] quadrantMap;
     private bool isHiding = false; // **MỚI**
-
+    private CardData cardData = null;
     void Awake()
     {
         if (targetImage == null)
@@ -126,10 +128,10 @@ public class ColorWheelController : MonoBehaviour, IPointerEnterHandler, IPointe
         {
             float angle = (Mathf.Atan2(localPos.y, localPos.x) * Mathf.Rad2Deg + 360f) % 360f;
             int selectedQ; string colorName; Color selectedColor;
-            if (angle < 45f || angle >= 315f) { selectedQ = 0; selectedColor = Color.yellow; colorName = "Yellow"; }
-            else if (angle < 135f) { selectedQ = 1; selectedColor = Color.red; colorName = "Red"; }
-            else if (angle < 225f) { selectedQ = 2; selectedColor = Color.green; colorName = "Green"; }
-            else { selectedQ = 3; selectedColor = Color.blue; colorName = "Blue"; }
+            if (angle < 45f || angle >= 315f) { selectedQ = 0; selectedColor = Color.yellow; colorName = "yellow"; }
+            else if (angle < 135f) { selectedQ = 1; selectedColor = Color.red; colorName = "red"; }
+            else if (angle < 225f) { selectedQ = 2; selectedColor = Color.green; colorName = "green"; }
+            else { selectedQ = 3; selectedColor = Color.blue; colorName = "blue"; }
 
             HighlightQuadrant(selectedQ);
             Debug.Log("Selected color: " + colorName);
@@ -142,6 +144,11 @@ public class ColorWheelController : MonoBehaviour, IPointerEnterHandler, IPointe
             StartCoroutine(ClickAnimation(() =>
             {
                 OnColorSelected?.Invoke(selectedColor);
+                if (cardData)
+                {
+                    cardData.cardColor = colorName;
+                    playedCardsManager.AddPlayedCard(cardData);
+                }
                 HideWheel();
             }));
         }
@@ -181,8 +188,9 @@ public class ColorWheelController : MonoBehaviour, IPointerEnterHandler, IPointe
         onComplete?.Invoke();
     }
 
-    public void ShowWheel()
+    public void ShowWheel(CardData cardData)
     {
+        this.cardData = cardData;
         isHiding = false; // **MỚI**
         targetImage.raycastTarget = true; // **MỚI**
 

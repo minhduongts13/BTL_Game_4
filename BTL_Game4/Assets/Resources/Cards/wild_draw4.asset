@@ -15,3 +15,4 @@ MonoBehaviour:
   cardColor: wild
   cardNumber: -13
   cardSprite: {fileID: 7633761521577533144, guid: abb6b6f9e2f600b47b6eeb9c43112193, type: 3}
+  cardString: 0

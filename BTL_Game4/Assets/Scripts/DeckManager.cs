@@ -5,6 +5,7 @@ public class DeckManager : MonoBehaviour
 {
     public static DeckManager Instance { get; private set; }
     private List<CardData> deck;
+    //public Text cardcount;
 
     void Awake()
     {
@@ -51,13 +52,15 @@ public class DeckManager : MonoBehaviour
     // Rút bài từ bộ bài
     public CardData DrawCard()
     {
-        if (deck.Count == 0)
-        {
-            Debug.LogWarning("Deck is empty!");
-            return null;
-        }
         CardData card = deck[0];
         deck.RemoveAt(0);
+        if (deck.Count == 0)
+        {
+            Debug.LogWarning("Game kết thúc");
+
+            return null;
+        }
+        //cardcount = RemainingCardCount().ToString();
         return card;
     }
     public int RemainingCardCount()
@@ -65,4 +68,14 @@ public class DeckManager : MonoBehaviour
         return deck.Count; // hoặc danh sách bạn đang dùng để chứa bài
     }
 
+    public void AddDeck(CardData card)
+    {
+        deck.Add(card);
+    }
+
+    public List<CardData> GetDeckCopy()
+    {
+        // Trả về một bản copy của danh sách bài hiện có
+        return new List<CardData>(deck);
+    }
 }
