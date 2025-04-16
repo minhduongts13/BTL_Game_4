@@ -85,6 +85,7 @@ public class UnoGameManager : MonoBehaviourPunCallbacks
                     {
                         // Ở mỗi client, PlayerHandManager ở script cục bộ sẽ được dùng để hiển thị tay bài
                         PlayerHandManager.Instance.SpawnCard(card);
+                        // Debug.Log("Nhận bài");
                     }
                     else
                     {
