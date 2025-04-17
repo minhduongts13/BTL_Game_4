@@ -4,7 +4,7 @@ using TMPro;
 public class Ranking : MonoBehaviour
 {
     public Transform ranksParent; // Gán object "Ranks" vào đây
-    public string[] playerNames = new string[] { "haha", "hoho", "hehe", "hihi" }; // Mặc định ban đầu
+    private string[] playerNames = new string[] { "Haha", "Hehe", "Bao", "Long"}; // Mặc định ban đầu
     public ReplayButton replayButton;
 
     void Start()
